@@ -1,4 +1,4 @@
-name: 'Run rubocop with reviewdog'
+name: 'Run rubocop with reviewdog - fork'
 description: '🐶 Run rubocop with reviewdog on pull requests to improve code review experience.'
 author: 'mgrachev (reviewdog)'
 inputs:
