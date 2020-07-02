@@ -57,6 +57,7 @@ runs:
     - ${{ inputs.fail_on_error }}
     - ${{ inputs.reviewdog_flags }}
     - ${{ inputs.workdir }}
+    - ${{ inputs.base_branch }}
 branding:
   icon: 'check-circle'
   color: 'red'
