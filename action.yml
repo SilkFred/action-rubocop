@@ -19,8 +19,6 @@ inputs:
   level:
     description: 'Report level for reviewdog [info,warning,error]'
     default: 'error'
-  base_branch:
-    description: 'Name of the branch that the PR should be checked against. Only the files differing from this branch will be passed to rubocop'
   reporter:
     description: |
       Reporter of reviewdog command [github-pr-check,github-pr-review].
@@ -57,7 +55,6 @@ runs:
     - ${{ inputs.fail_on_error }}
     - ${{ inputs.reviewdog_flags }}
     - ${{ inputs.workdir }}
-    - ${{ inputs.base_branch }}
 branding:
   icon: 'check-circle'
   color: 'red'
