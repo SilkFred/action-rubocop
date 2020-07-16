@@ -14,7 +14,11 @@ gem install -N rubocop $(version $INPUT_RUBOCOP_VERSION)
 echo $INPUT_RUBOCOP_EXTENSIONS | xargs gem install -N
 
 git diff origin/develop --name-only --diff-filter=AM \
-  | egrep -i "\.rb|\.rake$"; echo Gemfile \
+  | egrep -i "\.rb|\.rake$" >> /tmp/files_to_lint
+
+echo Gemfile >> /tmp/files_to_lint
+
+cat /tmp/files_to_lint \
   | xargs rubocop ${INPUT_RUBOCOP_FLAGS} \
   | reviewdog -f=rubocop \
       -name="${INPUT_TOOL_NAME}" \
